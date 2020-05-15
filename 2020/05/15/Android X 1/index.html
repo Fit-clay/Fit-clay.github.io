@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      RxjavaBUG1  | 墨色枫林
+      Android X 1 | 墨色枫林
     
   </title>
   <meta name="author" content="Eric">
@@ -100,7 +100,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「RxjavaBUG1 」
+			「Android X 1」
 		
 	</p>
 
@@ -242,8 +242,8 @@
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/Fit-clay.github.io/2020/05/15/RxjavaBUG1%20/" itemprop="url">
-		RxjavaBUG1 
+	<a href="/Fit-clay.github.io/2020/05/15/Android%20X%201/" itemprop="url">
+		Android X 1
 	</a>
 
 		</div>
@@ -259,8 +259,8 @@
 
 	Updated on
 
-	<a href="/Fit-clay.github.io/2020/05/15/RxjavaBUG1%20/" itemprop="url">
-		<time datetime="2020-05-15T08:15:22.717Z" itemprop="dateUpdated">
+	<a href="/Fit-clay.github.io/2020/05/15/Android%20X%201/" itemprop="url">
+		<time datetime="2020-05-15T08:19:39.243Z" itemprop="dateUpdated">
 	  		2020-05-15
 	  </time>
 	</a> 
@@ -279,20 +279,12 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h4 id="使用Rxjava-时报-NoClassDefFoundError-org-reactivestreams-Publisher"><a href="#使用Rxjava-时报-NoClassDefFoundError-org-reactivestreams-Publisher" class="headerlink" title="使用Rxjava 时报  NoClassDefFoundError. org.reactivestreams.Publisher"></a>使用Rxjava 时报  NoClassDefFoundError. org.reactivestreams.Publisher</h4><p>查阅资料发现时 <a href="http://www.reactive-streams.org/" target="_blank" rel="noopener">reactive-streams</a> 包未导入</p>
-<p>重新导入<br>implementation “org.reactivestreams:reactive-streams:+”</p>
-<p>即可</p>
-<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><h4 id="reactive-streams-是做什么的-？"><a href="#reactive-streams-是做什么的-？" class="headerlink" title="reactive-streams 是做什么的 ？"></a>reactive-streams 是做什么的 ？</h4><pre><code>官方说法是：
-    Reactive Streams的主要目标是管理跨异步边界的流数据交换（考虑将元素传递到另一个线程或线程池），
-    同时确保不强制接收方缓冲任意数量的数据。
-个人理解： 
-    区别于传统的命令式编程，以控制流程为核心，通过顺序、分支和循环三种结构控制来完成不同的行为；
-    Recative Streams可以让开发者以数据流为中心进行开发；
-    由recative streams进行数据传递，避免传递数据而产生的**回调地狱**。
-    较好的背压（回压）机制可以有效的避免因上游发送数据过多导致下游崩溃。</code></pre><h4 id="使用Rxjava为什么要导入它？"><a href="#使用Rxjava为什么要导入它？" class="headerlink" title="使用Rxjava为什么要导入它？"></a>使用Rxjava为什么要导入它？</h4><pre><code>RxJava是ReactiveX项目中的Java实现。ReactiveX项目实现了很多语言；
-比如JavaScript，.NET（C＃），Scala，Clojure，C++，Ruby，Python，PHP，Swift等。
-RxJava早于Reactive Streams规范。
-虽然RxJava 2.0+确实实现了Reactive Streams API规范，单使用的术语略有不同。</code></pre>	
+			<h2 id="Android-X-系列BUG"><a href="#Android-X-系列BUG" class="headerlink" title="Android X 系列BUG"></a>Android X 系列BUG</h2><p>当使用Androidx API时 </p>
+<p>在AndroidMainifest中配置 provider 时无法再使用之前 android.support.v4.content.FileProvider<br>而应使用 androidx.core.content.FileProvider<br> 否则会报<br><strong>Didn’t find class “android.support.v4.content.FileProvider</strong>“  的错误</p>
+<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>官方文档原文</p>
+<p>This package is part of the Android support library which is no longer maintained. The support library has been superseded by AndroidX which is part of Jetpack. We recommend using the AndroidX libraries in all new projects. You should also consider migrating existing projects to AndroidX.</p>
+<p>该软件包是Android支持库的一部分，该库不再维护。支持库已被Jetpack的AndroidX取代。 我们建议在所有新项目中使用AndroidX库。 您还应该考虑将现有项目迁移到AndroidX</p>
+<h5 id="总结-v4中的-FileProvider-是不再支持的Android支持库的一部分。支持库已被Jetpack的AndroidX取代。（Ps-个人猜测：大概是为了提高安全性吧）"><a href="#总结-v4中的-FileProvider-是不再支持的Android支持库的一部分。支持库已被Jetpack的AndroidX取代。（Ps-个人猜测：大概是为了提高安全性吧）" class="headerlink" title="总结 v4中的 FileProvider  是不再支持的Android支持库的一部分。支持库已被Jetpack的AndroidX取代。（Ps 个人猜测：大概是为了提高安全性吧）"></a>总结 v4中的 FileProvider  是不再支持的Android支持库的一部分。支持库已被Jetpack的AndroidX取代。（Ps 个人猜测：大概是为了提高安全性吧）</h5>	
 		</div>
 		
 		<div id="current-post-cover" data-scr="/Fit-clay.github.io/img/cart_cover.jpg"></div>
@@ -310,10 +302,10 @@ RxJava早于Reactive Streams规范。
 	<span>
 		<a id="totop-post-page">To Top</a>
 		
-			<a href="/Fit-clay.github.io/2020/05/15/Android%20X%201/" title="Android X 1" rel="prev">
-				&laquo;Pre post
-			</a>
 		
+			<a href="/Fit-clay.github.io/2020/05/15/RxjavaBUG1%20/" title="RxjavaBUG1 " rel="next">
+				Next post&raquo;
+			</a>
 			
 	</span>
 
@@ -332,23 +324,23 @@ RxJava早于Reactive Streams规范。
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/Fit-clay.github.io/2020/05/15/Android%20X%201/" title="Android X 1">
-								Android X 1			
+							<a class="relate-post-title" href="/Fit-clay.github.io/2020/05/15/RxjavaBUG1%20/" title="RxjavaBUG1 ">
+								RxjavaBUG1 			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
 								五月 15日, 2020				
 							</p>
 							<p class="relate-post-content">
-								Android X 系列BUG当使用Androidx API时 
-在AndroidMainifest中配置 provider 时无法再使用之前 android.support.v4.content.FileProvider而应使用 a...
+								使用Rxjava 时报  NoClassDefFoundError. org.reactivestreams.Publisher查阅资料发现时 reactive-streams 包未导入
+重新导入implementation “org...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/Fit-clay.github.io/2020/05/15/Android%20X%201/" title="Android X 1">				
+							<a href="/Fit-clay.github.io/2020/05/15/RxjavaBUG1%20/" title="RxjavaBUG1 ">				
 								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Android X 1"/>
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="RxjavaBUG1 "/>
 							</a>
 						</div>
 					</li>												
