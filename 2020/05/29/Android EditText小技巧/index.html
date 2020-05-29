@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      FileProvider Didn&#39;t find class | 墨色枫林
+      Android EditText小技巧 | 墨色枫林
     
   </title>
   <meta name="author" content="Eric">
@@ -100,7 +100,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「FileProvider Didn&#39;t find class」
+			「Android EditText小技巧」
 		
 	</p>
 
@@ -223,27 +223,14 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
-
-	
-		<div class="layout-toc">
-			<div id="layout-toc">
-				<div class="k-catelog-list" id="catelog-list" data-title="Catalog"></div>
-			</div>
-		</div>
-
-		
-<script src="/Fit-clay.github.io/plugin/toc/katelog.min.js"></script>
-
-
-		
 	 
 
 <div class="layout-post">
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/Fit-clay.github.io/2020/05/15/FileProvider%20Didn't%20find%20class/" itemprop="url">
-		FileProvider Didn&#39;t find class
+	<a href="/Fit-clay.github.io/2020/05/29/Android%20EditText%E5%B0%8F%E6%8A%80%E5%B7%A7/" itemprop="url">
+		Android EditText小技巧
 	</a>
 
 		</div>
@@ -259,9 +246,9 @@
 
 	Updated on
 
-	<a href="/Fit-clay.github.io/2020/05/15/FileProvider%20Didn't%20find%20class/" itemprop="url">
-		<time datetime="2020-05-15T08:19:39.243Z" itemprop="dateUpdated">
-	  		2020-05-15
+	<a href="/Fit-clay.github.io/2020/05/29/Android%20EditText%E5%B0%8F%E6%8A%80%E5%B7%A7/" itemprop="url">
+		<time datetime="2020-05-29T04:00:20.450Z" itemprop="dateUpdated">
+	  		2020-05-29
 	  </time>
 	</a> 
 
@@ -279,12 +266,14 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h2 id="Android-X-系列BUG"><a href="#Android-X-系列BUG" class="headerlink" title="Android X 系列BUG"></a>Android X 系列BUG</h2><p>当使用Androidx API时 </p>
-<p>在AndroidMainifest中配置 provider 时无法再使用之前 android.support.v4.content.FileProvider<br>而应使用 androidx.core.content.FileProvider<br> 否则会报<br><strong>Didn’t find class “android.support.v4.content.FileProvider</strong>“  的错误</p>
-<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>官方文档原文</p>
-<p>This package is part of the Android support library which is no longer maintained. The support library has been superseded by AndroidX which is part of Jetpack. We recommend using the AndroidX libraries in all new projects. You should also consider migrating existing projects to AndroidX.</p>
-<p>该软件包是Android支持库的一部分，该库不再维护。支持库已被Jetpack的AndroidX取代。 我们建议在所有新项目中使用AndroidX库。 您还应该考虑将现有项目迁移到AndroidX</p>
-<h5 id="总结-v4中的-FileProvider-是不再支持的Android支持库的一部分。支持库已被Jetpack的AndroidX取代。（Ps-个人猜测：大概是为了提高安全性吧）"><a href="#总结-v4中的-FileProvider-是不再支持的Android支持库的一部分。支持库已被Jetpack的AndroidX取代。（Ps-个人猜测：大概是为了提高安全性吧）" class="headerlink" title="总结 v4中的 FileProvider  是不再支持的Android支持库的一部分。支持库已被Jetpack的AndroidX取代。（Ps 个人猜测：大概是为了提高安全性吧）"></a>总结 v4中的 FileProvider  是不再支持的Android支持库的一部分。支持库已被Jetpack的AndroidX取代。（Ps 个人猜测：大概是为了提高安全性吧）</h5>	
+			<p>EditText 设置setFocusable(false)后想要重新获取焦点需要重新设置一下属性：</p>
+<ul>
+<li>setFocusable(true);</li>
+<li>setFocusableInTouchMode(true);<br>否则则无法重新获取焦点</li>
+</ul>
+<p>原因：<br>focusableInTouchModel和focusable属性并不是单独设置的，当调用setFocusable()和setFocusableInTouchMode()设置时，会根据属性值同时修改focusableInTouchModel和focusable。</p>
+<p>由此可得：当设置setFocusableInTouchMode(false)后想要重新获取焦点同样需要设置setFocusable才可重新获取焦点</p>
+	
 		</div>
 		
 		<div id="current-post-cover" data-scr="/Fit-clay.github.io/img/cart_cover.jpg"></div>
@@ -302,12 +291,8 @@
 	<span>
 		<a id="totop-post-page">To Top</a>
 		
-			<a href="/Fit-clay.github.io/2020/05/29/Android%20EditText%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="Android EditText小技巧" rel="prev">
-				&laquo;Pre post
-			</a>
 		
-		
-			<a href="/Fit-clay.github.io/2020/05/15/NoClassDefFoundError.%20org.reactivestreams.Publisher/" title="NoClassDefFoundError. org.reactivestreams.Publisher" rel="next">
+			<a href="/Fit-clay.github.io/2020/05/15/FileProvider%20Didn't%20find%20class/" title="FileProvider Didn't find class" rel="next">
 				Next post&raquo;
 			</a>
 			
@@ -328,27 +313,23 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/Fit-clay.github.io/2020/05/29/Android%20EditText%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="Android EditText小技巧">
-								Android EditText小技巧			
+							<a class="relate-post-title" href="/Fit-clay.github.io/2020/05/15/FileProvider%20Didn't%20find%20class/" title="FileProvider Didn't find class">
+								FileProvider Didn't find class			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								五月 29日, 2020				
+								五月 15日, 2020				
 							</p>
 							<p class="relate-post-content">
-								EditText 设置setFocusable(false)后想要重新获取焦点需要重新设置一下属性：
-
-setFocusable(true);
-setFocusableInTouchMode(true);否则则无法重新获取焦点
-
-原因...
+								Android X 系列BUG当使用Androidx API时 
+在AndroidMainifest中配置 provider 时无法再使用之前 android.support.v4.content.FileProvider而应使用 a...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/Fit-clay.github.io/2020/05/29/Android%20EditText%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="Android EditText小技巧">				
+							<a href="/Fit-clay.github.io/2020/05/15/FileProvider%20Didn't%20find%20class/" title="FileProvider Didn't find class">				
 								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Android EditText小技巧"/>
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="FileProvider Didn&#39;t find class"/>
 							</a>
 						</div>
 					</li>												
